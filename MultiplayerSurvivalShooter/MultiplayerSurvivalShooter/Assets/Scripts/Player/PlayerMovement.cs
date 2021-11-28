@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using Mirror;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
+
 	public float speed = 6f;
 
 	private Vector3 movement;
@@ -19,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
 	void FixedUpdate()
 	{
+		if (!isLocalPlayer)
+			return;
+
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
 

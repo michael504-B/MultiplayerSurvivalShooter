@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using Mirror;
 public class PlayerShooting : MonoBehaviour
 {
     public int damagePerShot = 20;
@@ -27,7 +27,7 @@ public class PlayerShooting : MonoBehaviour
         gunLight = GetComponent<Light> ();
     }
 
-
+    
     void Update ()
     {
         timer += Time.deltaTime;
@@ -50,7 +50,7 @@ public class PlayerShooting : MonoBehaviour
         gunLight.enabled = false;
     }
 
-
+    
     void Shoot ()
     {
         timer = 0f;
@@ -70,16 +70,23 @@ public class PlayerShooting : MonoBehaviour
 
         if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
         {
+
             EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();
             if(enemyHealth != null)
             {
                 enemyHealth.TakeDamage (damagePerShot, shootHit.point);
+
             }
             gunLine.SetPosition (1, shootHit.point);
+
         }
         else
         {
             gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
         }
+        
     }
+
+    
+    
 }
