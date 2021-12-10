@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 using Mirror;   
 
 public class EnemyAttack : MonoBehaviour
@@ -22,7 +23,9 @@ public class EnemyAttack : MonoBehaviour
         playerHealth = player.GetComponent <PlayerHealth> ();
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent <Animator> ();
+
     }
+
 
 
     void OnTriggerEnter (Collider other)
@@ -61,6 +64,7 @@ public class EnemyAttack : MonoBehaviour
 
     void Attack ()
     {
+        
         timer = 0f;
 
         if(playerHealth.currentHealth > 0)

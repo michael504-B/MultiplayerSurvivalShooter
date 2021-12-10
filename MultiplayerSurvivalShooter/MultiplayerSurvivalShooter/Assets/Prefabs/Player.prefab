@@ -5539,6 +5539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544f2064df03e95419b4a5147c506b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   startingHealth: 100
   currentHealth: 100
   healthSlider: {fileID: 0}
@@ -5546,6 +5548,7 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  Slider: {fileID: 0}
 --- !u!96 &1309820248
 TrailRenderer:
   serializedVersion: 2

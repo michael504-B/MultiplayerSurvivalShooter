@@ -18,6 +18,11 @@ public class GameOverManager : MonoBehaviour
 
     void Update()
     {
+        if (playerHealth == null)
+        {
+            playerHealth = FindObjectOfType<PlayerHealth>();
+        }
+
         if (playerHealth.currentHealth <= 0)
         {
             anim.SetTrigger("GameOver");

@@ -26,20 +26,25 @@ public class PlayerHealth : NetworkBehaviour
     bool isDead;
     bool damaged;
 
+    [SerializeField]
+   
+
 
     void Awake ()
     {
-        anim = GetComponent <Animator> ();
-        playerAudio = GetComponent <AudioSource> ();
-        playerMovement = GetComponent <PlayerMovement> ();
-        playerShooting = GetComponentInChildren <PlayerShooting> ();
+        anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+        playerMovement = GetComponent<PlayerMovement>();
+        playerShooting = GetComponentInChildren<PlayerShooting>();
         currentHealth = startingHealth;
+
     }
 
 
     void Update ()
     {
-        if(damaged)
+        
+        if (damaged)
         {
             damageImage.color = flashColour;
         }
@@ -54,7 +59,8 @@ public class PlayerHealth : NetworkBehaviour
     public void TakeDamage (int amount)
     {
 
-        if(!isServer)
+        if (!isServer)
+            return;
 
         damaged = true;
 

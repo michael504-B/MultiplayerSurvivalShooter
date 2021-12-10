@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using Mirror;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : NetworkBehaviour
 {
+    [SyncVar]
     public int startingHealth = 100;
+    [SyncVar]
     public int currentHealth;
+    [SyncVar]
     public float sinkSpeed = 2.5f;
+
     public int scoreValue = 10;
     public AudioClip deathClip;
 
@@ -14,7 +18,11 @@ public class EnemyHealth : MonoBehaviour
     AudioSource enemyAudio;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
+
+    [SyncVar]
     bool isDead;
+
+    [SyncVar]
     bool isSinking;
 
 
