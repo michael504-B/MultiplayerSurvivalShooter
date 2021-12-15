@@ -9,9 +9,12 @@ public class EnemyManager : NetworkBehaviour
     public Transform[] spawnPoints;
 
 
-    void Start ()
+
+
+
+    void Start()
     {
-        InvokeRepeating ("Spawn", spawnTime, spawnTime);
+        InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
 
